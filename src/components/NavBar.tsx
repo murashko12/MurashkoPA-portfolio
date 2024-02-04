@@ -93,7 +93,7 @@ const NavBar = () => {
                     transition={{duration: 1.2}}
                     className="fixed text-slate-100 backdrop-blur-lg top-5 left-[15%]  p-4 mt-0 rounded-full border-2 z-10 opacity-100 lg:opacity-0"
                 >
-                    {nav ? <IoMenu size={24}/> : <IoClose size={24}/>}
+                    {nav ? <IoClose size={24}/> : <IoMenu size={24}/>}
             </motion.button>
         </>
     )
