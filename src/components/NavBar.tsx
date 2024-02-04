@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {motion} from "framer-motion"
-import { IoLanguageOutline, IoMenu } from "react-icons/io5";
+import { IoLanguageOutline, IoMenu, IoClose } from "react-icons/io5";
 import { Link } from "react-scroll";
 
 type NavBarPoint = {
@@ -88,12 +88,12 @@ const NavBar = () => {
                     
             </motion.div>
             <motion.button 
+                    onClick={() => setNav(!nav)}
                     variants={NavBarAnimation}
-                    
                     transition={{duration: 1.2}}
                     className="fixed text-slate-100 backdrop-blur-lg top-5 left-[15%]  p-4 mt-0 rounded-full border-2 z-10 opacity-100 lg:opacity-0"
                 >
-                    <IoMenu size={24}/>
+                    {nav ? <IoMenu size={24}/> : <IoClose size={24}/>}
             </motion.button>
         </>
     )
