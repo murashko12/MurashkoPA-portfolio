@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import {motion} from "framer-motion"
 import { IoLanguageOutline, IoMenu } from "react-icons/io5";
 import { Link } from "react-scroll";
@@ -32,7 +32,7 @@ const LanguageAnimation = {
 
 const NavBar = () => {
 
-    // const [nav, setNav] = useState<boolean>(false)
+    const [nav, setNav] = useState<boolean>(false)
 
     const links: NavBarPoint[] = [
         {
@@ -72,7 +72,7 @@ const NavBar = () => {
                         {
                             links.map(({id,link}) => (
                                 <li key={id} className="w-28 text-center cursor-pointer capitalize hover:underline">
-                                    <Link to={link} smooth duration={500}>{link}</Link>    
+                                    <Link onClick={() => setNav(false)} to={link} smooth duration={500}>{link}</Link>    
                                 </li>
                             ))
                         }
