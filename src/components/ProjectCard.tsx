@@ -8,9 +8,9 @@ export interface IProjectParams {
 }
 
 const ProjectCard: React.FC<IProjectParams> = ({id,imgName,titleProject,stackProject,linkCode,linkDemo}) => {    
-
+    
     return (
-        <div key={id} className="relative overflow-hidden rounded-[20px]">
+        <div key={id} className="relative overflow-hidden rounded-[20px] shadow-2xl">
             <img
                 src={imgName}
                 className="rounded-[12px]"

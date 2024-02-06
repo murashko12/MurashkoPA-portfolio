@@ -69,7 +69,7 @@ const Home = () => {
                 <h3 className="text-center uppercase tracking-widest font-semibold text-2xl text-violet-950 lg:text-left">murashko petr</h3>
                 <br />
                 <div className="pl-0 lg:border-l-2 lg:border-b-2 lg:pl-1">
-                    <h1 className="text-center uppercase text-5xl font-bold text-slate-100 lg:text-left lg:text-7xl">fontend<br/>developer</h1>
+                    <h1 className="text-center uppercase text-5xl font-bold text-slate-100 lg:text-left lg:text-7xl">frontend<br/>developer</h1>
                 </div>
                 <div className="flex mt-5 justify-between gap-y-8 items-center flex-col-reverse lg:flex-row">
                     <button className="text-slate-100 w-full p-2 rounded-xl border-2 font-bold capitalize lg:w-32">view resume</button>

@@ -6,6 +6,7 @@ import Portfolio from "./components/Portfolio"
 import Skills from "./components/Skills"
 
 
+
 function App() {
     return (
         <>
@@ -29,6 +30,7 @@ function App() {
             <Contact/>
             <br />
             <br />
+            
         </>
     )
 }

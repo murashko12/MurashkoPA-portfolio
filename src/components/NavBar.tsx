@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {motion} from "framer-motion"
-import { IoLanguageOutline, IoMenu, IoClose } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
 import { Link } from "react-scroll";
 
 type NavBarPoint = {
@@ -19,18 +19,7 @@ const NavBarAnimation = {
     }
 }
 
-const LanguageAnimation = {
-    hidden: {
-        x: 100,
-        opacity: 0
-    },
-    visible: {
-        x: 0,
-        opacity: 1
-    }
-}
-
-const NavBar = () => {
+const NavBar: React.FC = () => {
 
     const [nav, setNav] = useState<boolean>(false)
 
@@ -58,10 +47,9 @@ const NavBar = () => {
             <motion.div
                 initial="hidden"
                 whileInView="visible" 
-                className="fixed flex justify-center gap-4 top-0 right-0 left-0 z-10 opacity-0 lg:opacity-100"
+                className="fixed flex justify-center top-0 right-0 left-0 z-10 opacity-0 lg:opacity-100"
 
             >
-                {/* <button>asdadsasd</button> */}
 
                 <motion.nav
                     variants={NavBarAnimation}
@@ -78,13 +66,7 @@ const NavBar = () => {
                         }
                     </ul>
                 </motion.nav>
-                <motion.button 
-                    variants={LanguageAnimation}
-                    transition={{duration: 1.2}}
-                    className="text-slate-100 backdrop-blur-lg p-2 mt-5 rounded-full border-2"
-                >
-                    <IoLanguageOutline size={24}/>
-                </motion.button>
+                
                     
             </motion.div>
             <motion.button 
