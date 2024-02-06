@@ -74,7 +74,7 @@ const Portfolio: React.FC = () => {
         <div className="w-[70%] mx-auto h-auto">
             <h1 className="uppercase tracking-widest font-semibold text-4xl text-slate-100 text-center border-b-2">portfolio</h1>
             <br />
-            <p className="text-justify text-slate-100 font-semibold font-lg">Check out some of my works right here</p>
+            <p className="text-justify text-slate-100 font-semibold text-lg">Check out some of my works right here</p>
             <br />
             <motion.ul 
                 className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3" 
