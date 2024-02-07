@@ -33,6 +33,7 @@ const About:React.FC = () => {
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
                                             <h1 className="text-xl border-b sm:border-none">2022 March</h1>
+                                            <br />
                                             <p>The start learning Frontend-development and the first acquaintance with react.</p>
                                         </div>
                                     </div>
@@ -50,6 +51,7 @@ const About:React.FC = () => {
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pl-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
                                             <h1 className="text-xl border-b sm:border-none">2022 June</h1>
+                                            <br />
                                             <p>Freelancing at the startup «Thmoon»</p>
                                         </div>
                                     </div>
@@ -67,6 +69,7 @@ const About:React.FC = () => {
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
                                             <h1 className="text-xl border-b sm:border-none">2022 November</h1>
+                                            <br />
                                             <p>Development of the client side of the «Logistics Engineering Center» company's website</p>
                                         </div>
                                     </div>
@@ -84,6 +87,7 @@ const About:React.FC = () => {
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pl-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
                                             <h1 className="text-xl border-b sm:border-none">2023 February - September</h1>
+                                            <br />
                                             <p>Development website for the IT-school of «Turing» at the National Research University «Moscow Power Engineering Institute»</p>
                                         </div>
                                     </div>
