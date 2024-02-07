@@ -30,11 +30,10 @@ const About:React.FC = () => {
                         <div className="mt-6 sm:mt-0 sm:mb-12">
                             <div className="flex flex-col sm:flex-row items-center">
                                 <div className="flex justify-start w-full mx-auto items-center">
-                                    <div className="w-full sm:w-1/2 sm:pr-8">
+                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            2022 March
-                                            <br />
-                                            The start learning Frontend-development and the first acquaintance with react. 
+                                            <h1 className="text-xl border-b sm:border-none">2022 March</h1>
+                                            <p>The start learning Frontend-development and the first acquaintance with react.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -48,11 +47,10 @@ const About:React.FC = () => {
                         <div className="mt-6 sm:mt-0 sm:mb-12">
                             <div className="flex flex-col sm:flex-row items-center">
                                 <div className="flex justify-end w-full mx-auto items-center">
-                                    <div className="w-full sm:w-1/2 sm:pl-8">
+                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pl-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            2022 June
-                                            <br />
-                                            Freelancing at the startup «Thmoon»
+                                            <h1 className="text-xl border-b sm:border-none">2022 June</h1>
+                                            <p>Freelancing at the startup «Thmoon»</p>
                                         </div>
                                     </div>
                                 </div>
@@ -66,11 +64,10 @@ const About:React.FC = () => {
                         <div className="mt-6 sm:mt-0 sm:mb-12">
                             <div className="flex flex-col sm:flex-row items-center">
                                 <div className="flex justify-start w-full mx-auto items-center">
-                                    <div className="w-full sm:w-1/2 sm:pr-8">
+                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            2022 November
-                                            <br />
-                                            Development of the client side of the «Logistics Engineering Center» company's website
+                                            <h1 className="text-xl border-b sm:border-none">2022 November</h1>
+                                            <p>Development of the client side of the «Logistics Engineering Center» company's website</p>
                                         </div>
                                     </div>
                                 </div>
@@ -84,11 +81,10 @@ const About:React.FC = () => {
                         <div className="mt-6 sm:mt-0">
                             <div className="flex flex-col sm:flex-row items-center">
                                 <div className="flex justify-end w-full mx-auto items-center">
-                                    <div className="w-full sm:w-1/2 sm:pl-8">
+                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pl-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            2023 February - September
-                                            <br />
-                                            Development website for the IT-school of «Turing» at the National Research University «Moscow Power Engineering Institute»
+                                            <h1 className="text-xl border-b sm:border-none">2023 February - September</h1>
+                                            <p>Development website for the IT-school of «Turing» at the National Research University «Moscow Power Engineering Institute»</p>
                                         </div>
                                     </div>
                                 </div>
