@@ -7,6 +7,11 @@ import Skills from "./components/Skills"
 
 
 
+
+
+
+
+
 function App() {
     return (
         <>
@@ -15,7 +20,7 @@ function App() {
             <br />
             <br />
             <br />
-            <About />
+            <About/>
             <br />
             <br />
             <br />

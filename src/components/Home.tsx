@@ -60,6 +60,7 @@ const Home = () => {
 
     return (
         <motion.div 
+            id="home"
             initial="hidden"
             whileInView="visible" 
             viewport={{ once: true }}
