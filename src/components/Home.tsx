@@ -6,6 +6,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 
 import myPhoto from '../images/MurashkoPA.png'
+import myResume from '../assets/ResumeMurashkoPA.pdf'
 
 type SocialLinks = {
     id: number;
@@ -73,7 +74,17 @@ const Home = () => {
                     <h1 className="text-center uppercase text-5xl font-bold text-slate-100 lg:text-left lg:text-7xl">frontend<br/>developer</h1>
                 </div>
                 <div className="flex mt-5 justify-between gap-y-8 items-center flex-col-reverse lg:flex-row">
-                    <button className="text-slate-100 w-full p-2 rounded-xl border-2 font-bold capitalize lg:w-32">view resume</button>
+
+
+
+                    <button className="text-slate-100 w-full p-2 rounded-xl border-2 font-bold capitalize lg:w-32">
+                        <a href={myResume} download="ResumeMurashkoPA">
+                            view resume
+                        </a>
+                    </button>
+
+
+
                     {/* ------------------- */}
                     <ul className="flex text-slate-100 w-full justify-between lg:gap-5 lg:w-2/4">
                     {
