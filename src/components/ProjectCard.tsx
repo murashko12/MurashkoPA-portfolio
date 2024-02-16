@@ -1,3 +1,7 @@
+import { FaGithub } from "react-icons/fa";
+import { CgVercel } from "react-icons/cg";
+
+
 export interface IProjectParams {
     id: number;
     imgName: string;
@@ -23,10 +27,16 @@ const ProjectCard: React.FC<IProjectParams> = ({id,imgName,titleProject,stackPro
                 </div>
                 <div className="flex gap-20">
                     <a href={linkCode} target="blank">
-                        <button className="bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">CODE</button>
+                        <button className="flex justify-around items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
+                            <FaGithub/>
+                            CODE
+                        </button>
                     </a>
                     <a href={linkDemo} target="blank">
-                        <button className="bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">DEMO</button>
+                        <button className="flex justify-around items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
+                            DEMO
+                            <CgVercel size={18} className="border rounded-full"/>
+                        </button>
                     </a>
                 </div>
             </div>

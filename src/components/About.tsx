@@ -5,7 +5,7 @@ import { SiFreelancer } from "react-icons/si";
 
 const About:React.FC = () => {
     return (
-        <div id="about" className="w-[70%] mx-auto h-auto">
+        <div id="about" className="w-[70%] max-w-[1000px]  mx-auto h-auto">
             <h1 className="uppercase tracking-widest font-semibold text-4xl text-slate-100 text-center border-b-2">about</h1>
             <br />
             <p className="text-slate-100 text-lg text-justify">

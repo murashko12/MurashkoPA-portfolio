@@ -65,7 +65,7 @@ const Home = () => {
             initial="hidden"
             whileInView="visible" 
             viewport={{ once: true }}
-            className="w-[70%] mt-40 mx-auto flex flex-col-reverse justify-between items-center h-auto gap-10 lg:flex-row "
+            className="w-[70%] max-w-[1000px]  mt-40 mx-auto flex flex-col-reverse justify-between items-center h-auto gap-10 lg:flex-row "
         >
             <div>
                 <h3 className="text-center uppercase tracking-widest font-semibold text-2xl text-violet-950 lg:text-left">murashko petr</h3>

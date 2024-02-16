@@ -57,7 +57,7 @@ const Skills: React.FC = () => {
     ]
 
     return (
-        <div id="skills" className="w-[70%] mx-auto h-auto">
+        <div id="skills" className="w-[70%] max-w-[1000px] mx-auto h-auto">
             <h1 className="uppercase tracking-widest font-semibold text-4xl text-slate-100 text-center border-b-2">skills</h1>
             <br />
             <p className="text-justify text-slate-100 font-semibold text-lg">These are the technologies I've worked with</p>

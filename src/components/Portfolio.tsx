@@ -4,6 +4,7 @@ import campApp from '../images/projects/campApp.png'
 import passwordGenerator from '../images/projects/passwordGenerator.png'
 import githubSearch from '../images/projects/githubSearch.png'
 import watchShop from '../images/projects/watchShop.png'
+import kanbanBoard from '../images/projects/kanbanBoard.png'
 // ------------------------------------------------------------------------------
 import { SiHtml5,SiCss3,SiJavascript,SiTypescript,SiReact,SiNextdotjs,SiMui,SiTailwindcss,SiRedux } from "react-icons/si";
 
@@ -67,11 +68,18 @@ const Portfolio: React.FC = () => {
             stackProject: [StackIcons["HTML"],StackIcons["CSS"],StackIcons["JS"]],
             linkCode: 'https://github.com/murashko12/WatchShop',
             linkDemo: 'https://watch-shop-pi.vercel.app/'
+        },{
+            id: 5,
+            imgName: kanbanBoard,
+            titleProject: "Kanban Board",
+            stackProject: [StackIcons["React"],StackIcons["TS"],StackIcons["Tailwindcss"]],
+            linkCode: 'https://github.com/murashko12/kanban-board-ts',
+            linkDemo: 'https://kanban-board-ts-virid.vercel.app/'
         }
     ]
 
     return (
-        <div id="portfolio" className="w-[70%] mx-auto h-auto">
+        <div id="portfolio" className="w-[70%] max-w-[1000px]  mx-auto h-auto">
             <h1 className="uppercase tracking-widest font-semibold text-4xl text-slate-100 text-center border-b-2">portfolio</h1>
             <br />
             <p className="text-justify text-slate-100 font-semibold text-lg">Check out some of my works right here</p>
