@@ -27,13 +27,13 @@ const ProjectCard: React.FC<IProjectParams> = ({id,imgName,titleProject,stackPro
                 </div>
                 <div className="flex gap-20">
                     <a href={linkCode} target="blank">
-                        <button className="flex justify-around items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
-                            <FaGithub/>
+                        <button className="flex justify-between px-1 items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
+                            <FaGithub size={18}/>
                             CODE
                         </button>
                     </a>
                     <a href={linkDemo} target="blank">
-                        <button className="flex justify-around items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
+                        <button className="flex justify-between px-1 items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
                             DEMO
                             <CgVercel size={18} className="border rounded-full"/>
                         </button>
