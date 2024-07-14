@@ -1,19 +1,23 @@
-// const ModalWindow = ({open, onClose, children}) => {
-//     return (
-//         <div onClick={onClose} 
-//             className={`fixed inset-0 flex justify-center items-center transition-colors 
-//                 ${open ? "visible bg-black/70" : "invisible"}
-//                 w-full
-//             `}
-//         >
-//             <div 
-//                 onClick={(e) => e.stopPropagation()}
-//                 className=""
-//             >
-//                 {children}
-//             </div>
-//         </div>
-//     )
-// }
+import React, { ReactNode } from "react"
 
-// export default ModalWindow
+interface ModalType {
+    children?: ReactNode;
+    isOpen: boolean;
+    toggle: () => void;
+}
+
+const ModalWindow: React.FC<ModalType> = ({children, isOpen, toggle}) => {
+    return (
+        <div onClick={toggle} 
+            className={`fixed z-10 inset-0 flex justify-center items-center transition-colors 
+                ${isOpen ? "visible bg-black/90" : "invisible"} w-full`
+            }
+        >
+            <div onClick={(e) => e.stopPropagation()}>
+                {children}
+            </div>
+        </div>
+    )
+}
+
+export default ModalWindow

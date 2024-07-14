@@ -32,9 +32,9 @@ const About:React.FC = () => {
                                 <div className="flex justify-start w-full mx-auto items-center">
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2022 March</h1>
+                                            <h1 className="text-xl border-b sm:border-none">2021 September</h1>
                                             <br />
-                                            <p>The start learning Frontend-development and the first acquaintance with react.</p>
+                                            <p>Development of the client side of the «Logistics Engineering Center» company's website</p>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@ const About:React.FC = () => {
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
                                             <h1 className="text-xl border-b sm:border-none">2022 June</h1>
                                             <br />
-                                            <p>Freelancing at the startup «Thmoon»</p>
+                                            <p>Intern at the startup «Thmoon»</p>
                                         </div>
                                     </div>
                                 </div>
@@ -68,9 +68,9 @@ const About:React.FC = () => {
                                 <div className="flex justify-start w-full mx-auto items-center">
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2022 November</h1>
+                                            <h1 className="text-xl border-b sm:border-none">2023 February</h1>
                                             <br />
-                                            <p>Development of the client side of the «Logistics Engineering Center» company's website</p>
+                                            <p>Junior at the startup «Thmoon»</p>
                                         </div>
                                     </div>
                                 </div>

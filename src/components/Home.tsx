@@ -51,7 +51,7 @@ const Home = () => {
         },{
             id: 3,
             child: <FaLinkedin size={30} />,
-            href: "#",
+            href: "https://www.linkedin.com/in/petr-murashko-646463297/",
         },{
             id: 4,
             child: <FaEnvelope size={30} />,

@@ -5,6 +5,7 @@ import passwordGenerator from '../images/projects/passwordGenerator.png'
 import githubSearch from '../images/projects/githubSearch.png'
 import watchShop from '../images/projects/watchShop.png'
 import kanbanBoard from '../images/projects/kanbanBoard.png'
+import ecommerceApp from '../images/projects/ecommerceApp.png'
 // ------------------------------------------------------------------------------
 import { SiHtml5,SiCss3,SiJavascript,SiTypescript,SiReact,SiNextdotjs,SiMui,SiTailwindcss,SiRedux } from "react-icons/si";
 
@@ -75,6 +76,13 @@ const Portfolio: React.FC = () => {
             stackProject: [StackIcons["React"],StackIcons["TS"],StackIcons["Tailwindcss"]],
             linkCode: 'https://github.com/murashko12/kanban-board-ts',
             linkDemo: 'https://kanban-board-ts-virid.vercel.app/'
+        },{
+            id: 6,
+            imgName: ecommerceApp,
+            titleProject: "Ecommerce App",
+            stackProject: [StackIcons["React"],StackIcons["TS"],StackIcons["Tailwindcss"],StackIcons["Redux"]],
+            linkCode: 'https://github.com/murashko12/ecommerce-cart',
+            linkDemo: 'https://ecommerce-cart-olive.vercel.app/'
         }
     ]
 

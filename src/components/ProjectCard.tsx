@@ -11,28 +11,28 @@ export interface IProjectParams {
     linkDemo: string;
 }
 
-const ProjectCard: React.FC<IProjectParams> = ({id,imgName,titleProject,stackProject,linkCode,linkDemo}) => {    
+const ProjectCard: React.FC<IProjectParams> = (props) => {    
     
     return (
-        <div key={id} className="relative overflow-hidden rounded-[20px] shadow-2xl">
+        <div className="relative overflow-hidden rounded-[20px] shadow-2xl">
             <img
-                src={imgName}
+                src={props.imgName}
                 className="rounded-[12px]"
                 alt="campApp" 
             />
             <div className=" w-full h-full top-0 right-0 bg-[#050505aa] absolute flex flex-col items-center justify-around px-10 opacity-0 duration-300 hover:opacity-100">
-                <div className="text-center capitalize text-slate-100 font-black text-xl">{titleProject}</div>
+                <div className="text-center capitalize text-slate-100 font-black text-xl">{props.titleProject}</div>
                 <div className="text-slate-100 flex gap-5 w-[240px] justify-center">
-                    {stackProject}
+                    {props.stackProject}
                 </div>
                 <div className="flex gap-20">
-                    <a href={linkCode} target="blank">
+                    <a href={props.linkCode} target="blank">
                         <button className="flex justify-between px-1 items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
                             <FaGithub size={18}/>
                             CODE
                         </button>
                     </a>
-                    <a href={linkDemo} target="blank">
+                    <a href={props.linkDemo} target="blank">
                         <button className="flex justify-between px-1 items-center bg-none w-20 text-slate-100 border-2 rounded-xl duration-300 hover:text-[#050505aa] hover:bg-slate-100">
                             DEMO
                             <CgVercel size={18} className="border rounded-full"/>
