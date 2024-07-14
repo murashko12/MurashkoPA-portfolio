@@ -22,7 +22,7 @@ const NavBarAnimation = {
 
 const NavBar: React.FC = () => {
 
-    const [nav, setNav] = useState<boolean>(true)
+    const [nav, setNav] = useState<boolean>(false)
 
     const links: NavBarPoint[] = [
         {
