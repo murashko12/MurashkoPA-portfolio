@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {motion} from "framer-motion"
 import { IoMenu, IoClose } from "react-icons/io5";
+// import { MdOutlineLanguage } from "react-icons/md";
 import { Link } from "react-scroll";
 import ModalWindow from "./ModalWindow";
 
@@ -48,12 +49,12 @@ const NavBar: React.FC = () => {
             <motion.div
                 initial="hidden"
                 whileInView="visible" 
-                className="fixed flex justify-center top-0 right-0 left-0 z-10 opacity-0 lg:opacity-100"
+                className="fixed flex justify-center top-0 right-0 left-0 z-10 opacity-0 lg:opacity-100  gap-5"
             >
                 <motion.nav
                     variants={NavBarAnimation}
                     transition={{duration: 1.2}}
-                    className="text-base text-slate-100 backdrop-blur-lg px-5 py-2 mt-5 rounded-full border-2"
+                    className=" flex text-base items-center text-slate-100 backdrop-blur-lg px-5 py-2 mt-5 rounded-full border-2"
                 >
                     <ul className="grid grid-cols-5 divide-x">
                         {
@@ -63,17 +64,23 @@ const NavBar: React.FC = () => {
                                 </li>
                             ))
                         }
+                    
                     </ul>
+                    
                 </motion.nav>
-            </motion.div>
-            <motion.button 
+                    {/* <button className="flex text-base items-center text-slate-100 backdrop-blur-lg p-2 mt-5 rounded-full border-2">
+                        <MdOutlineLanguage size={25}/>
+                    </button> */}
+                </motion.div>
+            <button 
+            
                     onClick={() => setNav(!nav)}
-                    variants={NavBarAnimation}
-                    transition={{duration: 1.2}}
+                    
+                    
                     className="fixed text-slate-100 backdrop-blur-lg top-5 left-[15%]  p-4 mt-0 rounded-full border-2 z-20 opacity-100 lg:opacity-0"
                 >
                     {nav ? <IoClose size={24}/> : <IoMenu size={24}/>}
-            </motion.button>
+            </button>
             <ModalWindow isOpen={nav} toggle={() => setNav(false)}>
                 <nav className="text-slate-100 text-3xl">
                     <ul className="flex flex-col gap-10">
