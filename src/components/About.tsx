@@ -98,6 +98,24 @@ const About:React.FC = () => {
                             </div>
                         </div>
 
+                        {/* Left section, set by justify-start and sm:pr-8 */}
+                        <div className="mt-6 sm:mt-0 sm:mb-12">
+                            <div className="flex flex-col sm:flex-row items-center">
+                                <div className="flex justify-start w-full mx-auto items-center">
+                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
+                                        <div className="p-4 border-2 rounded-xl text-slate-100">
+                                            <h1 className="text-xl border-b sm:border-none">2024 August</h1>
+                                            <br />
+                                            <p>Junior/Middle at the company G-LAB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="rounded-full bg-[#288499] border-white border-2 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                                    <BsLightningFill className="text-slate-100" size={20}/>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

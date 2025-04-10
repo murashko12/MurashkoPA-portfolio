@@ -31,27 +31,27 @@ const Skills: React.FC = () => {
         },{
             id: 5,
             title: "React",
-            range: 95,
+            range: 100,
             icon: <SiReact size={25} className="text-neutral-100"/>
         },{
             id: 6,
             title: "Redux",
-            range: 80,
+            range: 100,
             icon: <SiRedux size={25} className="text-neutral-100"/>
         },{
             id: 7,
             title: "NextJS",
-            range: 50,
+            range: 80,
             icon: <SiNextdotjs size={25} className="text-neutral-100"/>
         },{
             id: 8,
             title: "MUI",
-            range: 70,
+            range: 100,
             icon: <SiMui size={25} className="text-neutral-100"/>
         },{
             id: 9,
             title: "TailwindCSS",
-            range: 90,
+            range: 100,
             icon: <SiTailwindcss size={25} className="text-neutral-100"/>
         }
     ]
