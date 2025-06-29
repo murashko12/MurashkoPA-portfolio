@@ -104,7 +104,7 @@ const About:React.FC = () => {
                                 <div className="flex justify-start w-full mx-auto items-center">
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2024 August</h1>
+                                            <h1 className="text-xl border-b sm:border-none">2024 June</h1>
                                             <br />
                                             <p>Junior/Middle at the company G-LAB</p>
                                         </div>
