@@ -1,5 +1,5 @@
 import SkillComponent from "./SkillComponent"
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiRedux, SiJest, SiWebpack, SiGit, SiDocker, SiGraphql, SiPostgresql } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiRedux, SiJest, SiWebpack, SiGit, SiDocker, SiPostgresql } from "react-icons/si";
 import { TbApi } from "react-icons/tb"
 import { VscCode } from "react-icons/vsc"
 import { ISkillsParams } from './SkillComponent'
