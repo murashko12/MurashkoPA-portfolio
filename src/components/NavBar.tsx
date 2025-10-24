@@ -68,9 +68,9 @@ const NavBar: React.FC = () => {
                     </ul>
                     
                 </motion.nav>
-                    {/* <button className="flex text-base items-center text-slate-100 backdrop-blur-lg p-2 mt-5 rounded-full border-2">
-                        <MdOutlineLanguage size={25}/>
-                    </button> */}
+                    {/* <button className="flex text-base items-center text-slate-100 backdrop-blur-lg p-2 mt-5 rounded-full border-2"> */}
+                        {/* <MdOutlineLanguage size={25}/> */}
+                    {/* </button> */}
                 </motion.div>
             <button 
             

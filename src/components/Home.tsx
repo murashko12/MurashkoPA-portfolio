@@ -6,7 +6,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 
 import myPhoto from '../images/MurashkoPA.png'
-import myResume from '../assets/ResumeMurashkoPA.pdf'
+import myResume from '../assets/MurashkoPA-CV(EN).pdf'
 
 type SocialLinks = {
     id: number;

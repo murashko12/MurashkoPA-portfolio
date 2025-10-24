@@ -9,10 +9,7 @@ const About:React.FC = () => {
             <h1 className="uppercase tracking-widest font-semibold text-4xl text-slate-100 text-center border-b-2">about</h1>
             <br />
             <p className="text-slate-100 text-lg text-justify">
-                I have bachelor's degree program at the National Research University «Moscow Power Engineering Institute» with the degree in 09.03.01 «Computer Science and Computer Engineering». 
-                I've taken courses in Web development from «<a href="https://thmoon.ru/" target="_blank">Thmoon</a>». 
-                I've worked with «Logistics Engineering Center». I'm still improving my React skills. My English level is C1 «Advanced». 
-                Personal qualities: purposeful, able to work in a team, pragmatic, stress-resistant and creative.
+                I am a Frontend Developer with over 3.5 years of commercial experience, specializing in modern React, TypeScript, and state management. I hold a Bachelor's degree in Computer Science from the National Research University «Moscow Power Engineering Institute». My career began with an internship at «<a href="https://thmoon.ru/" target="_blank">Thmoon</a>», where I progressed to a Junior role, and I am currently working as a Middle Frontend Developer at «G-Lab LLC». I am passionate about building efficient, scalable, and user-friendly applications, and I continuously strive to improve my skills through practice and learning. I am proficient in English (C1 Advanced) and value teamwork, pragmatism, and clean code principles such as SOLID, DRY, and KISS.
             </p>
             <br />
 
@@ -50,7 +47,7 @@ const About:React.FC = () => {
                                 <div className="flex justify-end w-full mx-auto items-center">
                                     <div className="w-full text-center sm:text-left sm:w-1/2 sm:pl-8">
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2022 June</h1>
+                                            <h1 className="text-xl border-b sm:border-none">2022 March</h1>
                                             <br />
                                             <p>Intern at the startup «Thmoon»</p>
                                         </div>
@@ -106,7 +103,7 @@ const About:React.FC = () => {
                                         <div className="p-4 border-2 rounded-xl text-slate-100">
                                             <h1 className="text-xl border-b sm:border-none">2024 June</h1>
                                             <br />
-                                            <p>Junior/Middle at the company G-LAB</p>
+                                            <p>Middle Frontend Developer at «G-Lab LLC»</p>
                                         </div>
                                     </div>
                                 </div>
