@@ -104,7 +104,7 @@ const Home = () => {
                 variants={PhotoAnimation}
                 transition={{duration: 0.5}}
                 viewport={{ once: true }}
-                src={myPhoto} alt="myPhoto" className="w-[266px] h-[266px] rounded-full object-cover"
+                src={myPhoto} alt="myPhoto" className="w-[266px] h-[300px] rounded-xl object-cover"
             />
         </motion.div>
     )
