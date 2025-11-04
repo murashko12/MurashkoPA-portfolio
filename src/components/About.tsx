@@ -1,33 +1,16 @@
-import { motion } from "framer-motion";
-import { 
-  BsLightningFill, 
-  // BsCodeSlash, 
-  BsRocketTakeoff,
-  BsGraphUp
-} from "react-icons/bs";
-import { 
-  // GiGraduateCap, 
-  GiTeacher,
-  GiSpiderWeb
-} from "react-icons/gi";
-import { 
-  // GoProjectRoadmap,
-  GoRocket
-} from "react-icons/go";
-import { 
-  SiFreelancer 
-} from "react-icons/si";
-import { 
-  // FaUniversity,
-  FaLaptopCode
-} from "react-icons/fa";
+import { motion } from "framer-motion"
+import { BsLightningFill, BsRocketTakeoff, BsGraphUp } from "react-icons/bs"
+import { GiTeacher, GiSpiderWeb } from "react-icons/gi"
+import { GoRocket } from "react-icons/go"
+import { SiFreelancer } from "react-icons/si"
+import { FaLaptopCode } from "react-icons/fa"
 
 interface TimelineEvent {
-  date: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  achievements?: string[];
+  date: string
+  title: string
+  description: string
+  icon: React.ReactNode
+  achievements?: string[]
 }
 
 const About: React.FC = () => {

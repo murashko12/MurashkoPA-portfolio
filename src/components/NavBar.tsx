@@ -9,7 +9,7 @@ type NavBarPoint = {
     label: string
 }
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
     const [nav, setNav] = useState<boolean>(false)
     const [activeLink, setActiveLink] = useState<string>('home')
 
@@ -82,17 +82,16 @@ const NavBar: React.FC = () => {
 
     return (
         <>
-            {/* Desktop Navigation - скрыто на мобильных */}
             <motion.header
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={containerVariants}
-                className="fixed top-0 left-0 right-0 z-50 py-4 hidden lg:block" // ✅ Добавлено hidden lg:block
+                className="fixed top-0 left-0 right-0 z-50 py-4 hidden lg:block"
             >
                 <div className="w-[90%] max-w-[1200px] mx-auto">
                     <motion.nav className="flex items-center justify-center">
-                        <motion.ul className="flex items-center gap-1 bg-slate-800/80 backdrop-blur-md px-6 py-3 rounded-full border border-slate-700 shadow-2xl">
+                        <motion.ul className="flex items-center gap-1 bg-slate-800/80 backdrop-blur-md px-3 py-3 rounded-full border border-slate-700 shadow-2xl">
                             {links.map(({ id, link, label }) => (
                                 <motion.li
                                     key={id}
@@ -132,7 +131,6 @@ const NavBar: React.FC = () => {
                 </div>
             </motion.header>
 
-            {/* Mobile Menu Button - видно только на мобильных */}
             <motion.button
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -144,11 +142,9 @@ const NavBar: React.FC = () => {
                 {nav ? <IoClose size={20} /> : <IoMenu size={20} />}
             </motion.button>
 
-            {/* Mobile Navigation */}
             <AnimatePresence>
                 {nav && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -157,7 +153,6 @@ const NavBar: React.FC = () => {
                             className="fixed inset-0 z-40 bg-slate-900/80 backdrop-blur-sm lg:hidden"
                         />
                         
-                        {/* Mobile Menu */}
                         <motion.div
                             variants={mobileMenuVariants}
                             initial="closed"
@@ -166,7 +161,7 @@ const NavBar: React.FC = () => {
                             className="fixed top-0 left-0 bottom-0 w-80 z-40 bg-slate-800/95 backdrop-blur-md border-r border-slate-700 shadow-2xl lg:hidden"
                         >
                             <div className="flex flex-col h-full pt-20 px-8">
-                                {/* Logo/Name */}
+
                                 <motion.div
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -177,7 +172,6 @@ const NavBar: React.FC = () => {
                                     <p className="text-slate-400 text-sm">Frontend Developer</p>
                                 </motion.div>
 
-                                {/* Navigation Links */}
                                 <nav className="flex-1">
                                     <ul className="space-y-4">
                                         {links.map(({ id, link, label }) => (
@@ -210,7 +204,6 @@ const NavBar: React.FC = () => {
                                     </ul>
                                 </nav>
 
-                                {/* Contact Info */}
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
