@@ -5,38 +5,16 @@ import NavBar from "./components/NavBar"
 import Portfolio from "./components/Portfolio"
 import Skills from "./components/Skills"
 
-
-
-
-
-
-
-
 function App() {
     return (
-        <>
+        <div className="min-h-screen">
             <NavBar/>
             <Home/>
-            <br />
-            <br />
-            <br />
             <About/>
-            <br />
-            <br />
-            <br />
             <Portfolio/>
-            <br />
-            <br />
-            <br />
             <Skills/>
-            <br />
-            <br />
-            <br />
             <Contact/>
-            <br />
-            <br />
-            
-        </>
+        </div>
     )
 }
 

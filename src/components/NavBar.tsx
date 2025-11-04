@@ -1,105 +1,237 @@
-import { useState } from "react";
-import {motion} from "framer-motion"
-import { IoMenu, IoClose } from "react-icons/io5";
-// import { MdOutlineLanguage } from "react-icons/md";
-import { Link } from "react-scroll";
-import ModalWindow from "./ModalWindow";
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { IoMenu, IoClose } from "react-icons/io5"
+import { Link } from "react-scroll"
 
 type NavBarPoint = {
-    id: number;
-    link: string;
-}
-
-const NavBarAnimation = {
-    hidden: {
-        x: -100,
-        opacity: 0
-    },
-    visible: {
-        x: 0,
-        opacity: 1
-    }
+    id: number
+    link: string
+    label: string
 }
 
 const NavBar: React.FC = () => {
-
     const [nav, setNav] = useState<boolean>(false)
+    const [activeLink, setActiveLink] = useState<string>('home')
 
     const links: NavBarPoint[] = [
-        {
-            id: 1,
-            link: 'home'
-        },{
-            id: 2,
-            link: 'about'
-        },{
-            id: 3,
-            link: 'portfolio'
-        },{
-            id: 4,
-            link: 'skills'
-        },{
-            id: 5,
-            link: 'contact'
-        }
+        { id: 1, link: 'home', label: 'Home' },
+        { id: 2, link: 'about', label: 'About' },
+        { id: 3, link: 'portfolio', label: 'Projects' },
+        { id: 4, link: 'skills', label: 'Skills' },
+        { id: 5, link: 'contact', label: 'Contact' }
     ]
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: -50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: (custom: number) => ({
+            opacity: 1,
+            x: 0,
+            transition: {
+                delay: custom * 0.1,
+                duration: 0.5
+            }
+        })
+    }
+
+    const mobileMenuVariants = {
+        closed: {
+            opacity: 0,
+            x: "-100%",
+            transition: {
+                duration: 0.3,
+                ease: "easeInOut"
+            }
+        },
+        open: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.4,
+                ease: "easeOut"
+            }
+        }
+    }
+
+    const mobileItemVariants = {
+        closed: { opacity: 0, x: -50 },
+        open: (custom: number) => ({
+            opacity: 1,
+            x: 0,
+            transition: {
+                delay: custom * 0.1,
+                duration: 0.5
+            }
+        })
+    }
+
+    const handleSetActive = (to: string) => {
+        setActiveLink(to)
+    }
 
     return (
         <>
-            <motion.div
+            {/* Desktop Navigation - скрыто на мобильных */}
+            <motion.header
                 initial="hidden"
-                whileInView="visible" 
-                className="fixed flex justify-center top-0 right-0 left-0 z-10 opacity-0 lg:opacity-100  gap-5"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={containerVariants}
+                className="fixed top-0 left-0 right-0 z-50 py-4 hidden lg:block" // ✅ Добавлено hidden lg:block
             >
-                <motion.nav
-                    variants={NavBarAnimation}
-                    transition={{duration: 1.2}}
-                    className=" flex text-base items-center text-slate-100 backdrop-blur-lg px-5 py-2 mt-5 rounded-full border-2"
-                >
-                    <ul className="grid grid-cols-5 divide-x">
-                        {
-                            links.map(({id,link}) => (
-                                <li key={id} className="w-28 text-center cursor-pointer capitalize hover:underline">
-                                    <Link onClick={() => setNav(false)} to={link} smooth duration={500}>{link}</Link>    
-                                </li>
-                            ))
-                        }
-                    
-                    </ul>
-                    
-                </motion.nav>
-                    {/* <button className="flex text-base items-center text-slate-100 backdrop-blur-lg p-2 mt-5 rounded-full border-2"> */}
-                        {/* <MdOutlineLanguage size={25}/> */}
-                    {/* </button> */}
-                </motion.div>
-            <button 
-            
-                    onClick={() => setNav(!nav)}
-                    
-                    
-                    className="fixed text-slate-100 backdrop-blur-lg top-5 left-[15%]  p-4 mt-0 rounded-full border-2 z-20 opacity-100 lg:opacity-0"
-                >
-                    {nav ? <IoClose size={24}/> : <IoMenu size={24}/>}
-            </button>
-            <ModalWindow isOpen={nav} toggle={() => setNav(false)}>
-                <nav className="text-slate-100 text-3xl">
-                    <ul className="flex flex-col gap-10">
-                        {
-                            links.map(({id,link}) => (
-                                <li key={id} className="w-72 py-3 text-center cursor-pointer capitalize border-2 rounded-full">
-                                    <Link onClick={() => setNav(false)} to={link} smooth duration={500}>{link}</Link>    
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </nav>
-            </ModalWindow>
+                <div className="w-[90%] max-w-[1200px] mx-auto">
+                    <motion.nav className="flex items-center justify-center">
+                        <motion.ul className="flex items-center gap-1 bg-slate-800/80 backdrop-blur-md px-6 py-3 rounded-full border border-slate-700 shadow-2xl">
+                            {links.map(({ id, link, label }) => (
+                                <motion.li
+                                    key={id}
+                                    custom={id}
+                                    variants={itemVariants}
+                                    className="relative"
+                                >
+                                    <Link
+                                        to={link}
+                                        smooth={true}
+                                        duration={500}
+                                        spy={true}
+                                        onSetActive={handleSetActive}
+                                        className={`
+                                            relative px-6 py-2 rounded-full text-sm font-medium cursor-pointer transition-all duration-300
+                                            ${activeLink === link
+                                                ? "text-cyan-400"
+                                                : "text-slate-300 hover:text-slate-100"
+                                            }
+                                        `}
+                                    >
+                                        {label}
+                                        
+                                        {/* Active Indicator */}
+                                        {activeLink === link && (
+                                            <motion.div
+                                                layoutId="activeIndicator"
+                                                className="absolute inset-0 bg-cyan-400/10 border border-cyan-400/30 rounded-full -z-10"
+                                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                            />
+                                        )}
+                                    </Link>
+                                </motion.li>
+                            ))}
+                        </motion.ul>
+                    </motion.nav>
+                </div>
+            </motion.header>
+
+            {/* Mobile Menu Button - видно только на мобильных */}
+            <motion.button
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setNav(!nav)}
+                className="fixed top-6 right-6 z-50 lg:hidden p-3 bg-slate-800/80 backdrop-blur-md text-slate-100 rounded-full border border-slate-700 shadow-2xl"
+            >
+                {nav ? <IoClose size={20} /> : <IoMenu size={20} />}
+            </motion.button>
+
+            {/* Mobile Navigation */}
+            <AnimatePresence>
+                {nav && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setNav(false)}
+                            className="fixed inset-0 z-40 bg-slate-900/80 backdrop-blur-sm lg:hidden"
+                        />
+                        
+                        {/* Mobile Menu */}
+                        <motion.div
+                            variants={mobileMenuVariants}
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            className="fixed top-0 left-0 bottom-0 w-80 z-40 bg-slate-800/95 backdrop-blur-md border-r border-slate-700 shadow-2xl lg:hidden"
+                        >
+                            <div className="flex flex-col h-full pt-20 px-8">
+                                {/* Logo/Name */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                    className="mb-12"
+                                >
+                                    <h2 className="text-2xl font-bold text-cyan-400">Petr Murashko</h2>
+                                    <p className="text-slate-400 text-sm">Frontend Developer</p>
+                                </motion.div>
+
+                                {/* Navigation Links */}
+                                <nav className="flex-1">
+                                    <ul className="space-y-4">
+                                        {links.map(({ id, link, label }) => (
+                                            <motion.li
+                                                key={id}
+                                                custom={id}
+                                                variants={mobileItemVariants}
+                                                initial="closed"
+                                                animate="open"
+                                            >
+                                                <Link
+                                                    to={link}
+                                                    smooth={true}
+                                                    duration={500}
+                                                    spy={true}
+                                                    onSetActive={handleSetActive}
+                                                    onClick={() => setNav(false)}
+                                                    className={`
+                                                        block px-6 py-4 rounded-xl text-lg font-medium transition-all duration-300 border
+                                                        ${activeLink === link
+                                                            ? "text-cyan-400 bg-cyan-400/10 border-cyan-400/30"
+                                                            : "text-slate-300 border-slate-600 hover:text-slate-100 hover:border-slate-500"
+                                                        }
+                                                    `}
+                                                >
+                                                    {label}
+                                                </Link>
+                                            </motion.li>
+                                        ))}
+                                    </ul>
+                                </nav>
+
+                                {/* Contact Info */}
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.6 }}
+                                    className="pb-8 pt-12 border-t border-slate-700"
+                                >
+                                    <p className="text-slate-400 text-sm mb-4">Get in touch</p>
+                                    <a
+                                        href="mailto:petr@ocumare.ru"
+                                        className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                                    >
+                                        petr@ocumare.ru
+                                    </a>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </>
     )
 }
 
 export default NavBar
-
-{/*
-    
-    */}

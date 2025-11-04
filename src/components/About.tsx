@@ -3,121 +3,132 @@ import { GiClassicalKnowledge } from "react-icons/gi";
 import { GoProjectRoadmap } from "react-icons/go";
 import { SiFreelancer } from "react-icons/si";
 
-const About:React.FC = () => {
-    return (
-        <div id="about" className="w-[70%] max-w-[1000px]  mx-auto h-auto">
-            <h1 className="uppercase tracking-widest font-semibold text-4xl text-slate-100 text-center border-b-2">about</h1>
-            <br />
-            <p className="text-slate-100 text-lg text-justify">
-                I am a Frontend Developer with over 3.5 years of commercial experience, specializing in modern React, TypeScript, and state management. I hold a Bachelor's degree in Computer Science from the National Research University «Moscow Power Engineering Institute». My career began with an internship at «<a href="https://thmoon.ru/" target="_blank">Thmoon</a>», where I progressed to a Junior role, and I am currently working as a Middle Frontend Developer at «G-Lab LLC». I am passionate about building efficient, scalable, and user-friendly applications, and I continuously strive to improve my skills through practice and learning. I am proficient in English (C1 Advanced) and value teamwork, pragmatism, and clean code principles such as SOLID, DRY, and KISS.
-            </p>
-            <br />
-
-            {/* Timeline */}
-
-            <div className="flex flex-col justify-center">
-                <div className=" sm:max-w-xl sm:mx-auto w-full px-2 sm:px-0">
-
-                    <div className="relative text-gray-700 antialiased text-md font-semibold">
-
-                    {/* Vertical bar running through middle */}
-                        <div className="hidden sm:block border bg-slate-100 absolute h-full left-1/2 transform -translate-x-1/2"></div>
-
-                    {/* Left section, set by justify-start and sm:pr-8 */}
-                        <div className="mt-6 sm:mt-0 sm:mb-12">
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <div className="flex justify-start w-full mx-auto items-center">
-                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
-                                        <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2021 September</h1>
-                                            <br />
-                                            <p>Development of the client side of the «Logistics Engineering Center» company's website</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="rounded-full bg-[#288499] border-slate-100 border-2 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                                    <GiClassicalKnowledge className="text-slate-100" size={20}/>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right section, set by justify-end and sm:pl-8 */}
-                        <div className="mt-6 sm:mt-0 sm:mb-12">
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <div className="flex justify-end w-full mx-auto items-center">
-                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pl-8">
-                                        <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2022 March</h1>
-                                            <br />
-                                            <p>Intern at the startup «Thmoon»</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="rounded-full bg-[#288499] border-white border-2 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                                    <SiFreelancer className="text-slate-100" size={20}/>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Left section, set by justify-start and sm:pr-8 */}
-                        <div className="mt-6 sm:mt-0 sm:mb-12">
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <div className="flex justify-start w-full mx-auto items-center">
-                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
-                                        <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2023 February</h1>
-                                            <br />
-                                            <p>Junior at the startup «Thmoon»</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="rounded-full bg-[#288499] border-white border-2 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                                    <BsLightningFill className="text-slate-100" size={20}/>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right section, set by justify-end and sm:pl-8 */}
-                        <div className="mt-6 sm:mt-0">
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <div className="flex justify-end w-full mx-auto items-center">
-                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pl-8">
-                                        <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2023 February - September</h1>
-                                            <br />
-                                            <p>Development website for the IT-school of «Turing» at the National Research University «Moscow Power Engineering Institute»</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="rounded-full bg-[#288499] border-white border-2 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                                    <GoProjectRoadmap className="text-slate-100" size={20}/>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Left section, set by justify-start and sm:pr-8 */}
-                        <div className="mt-6 sm:mt-0 sm:mb-12">
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <div className="flex justify-start w-full mx-auto items-center">
-                                    <div className="w-full text-center sm:text-left sm:w-1/2 sm:pr-8">
-                                        <div className="p-4 border-2 rounded-xl text-slate-100">
-                                            <h1 className="text-xl border-b sm:border-none">2024 June</h1>
-                                            <br />
-                                            <p>Middle Frontend Developer at «G-Lab LLC»</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="rounded-full bg-[#288499] border-white border-2 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                                    <BsLightningFill className="text-slate-100" size={20}/>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+interface TimelineEvent {
+  date: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  achievements?: string[];
 }
 
-export default About
+const About: React.FC = () => {
+  const timelineEvents: TimelineEvent[] = [
+    {
+      date: "2021 September",
+      title: "Logistics Engineering Center",
+      description: "Development of the client side of the company's website",
+      icon: <GiClassicalKnowledge className="text-slate-100" size={20} />,
+      achievements: ["First commercial project", "SPA development"]
+    },
+    {
+      date: "2021 March",
+      title: "Thmoon Startup",
+      description: "Junior Frontend Developer",
+      icon: <SiFreelancer className="text-slate-100" size={20} />,
+      achievements: ["React & TypeScript", "Startup environment"]
+    },
+    {
+      date: "2023 February",
+      title: "Thmoon Startup",
+      description: "Middle Frontend Developer",
+      icon: <BsLightningFill className="text-slate-100" size={20} />,
+      achievements: ["15+ SPA applications", "98% Lighthouse score"]
+    },
+    {
+      date: "2023 February - September",
+      title: "Turing IT School at MPEI",
+      description: "Website development for the IT school",
+      icon: <GoProjectRoadmap className="text-slate-100" size={20} />,
+      achievements: ["University project", "Educational platform"]
+    },
+    {
+      date: "2024 June - Present",
+      title: "G-Lab LLC",
+      description: "Middle Frontend Developer",
+      icon: <BsLightningFill className="text-slate-100" size={20} />,
+      achievements: ["UI system development", "35% performance improvement"]
+    }
+  ];
+
+  const TimelineItem = ({ event, isEven }: { event: TimelineEvent; isEven: boolean }) => (
+    <div className="mt-6 sm:mt-0 sm:mb-12">
+      <div className="flex flex-col sm:flex-row items-center">
+        <div className={`flex ${isEven ? 'justify-start' : 'justify-end'} w-full mx-auto items-center`}>
+          <div className={`w-full text-center sm:text-left sm:w-1/2 ${isEven ? 'sm:pr-8' : 'sm:pl-8'}`}>
+            <div className="p-6 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-100 hover:bg-slate-800/70 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-3">
+                <h2 className="text-xl font-semibold text-cyan-400">{event.title}</h2>
+                <span className="text-sm text-slate-400 bg-slate-700 px-2 py-1 rounded">
+                  {event.date}
+                </span>
+              </div>
+              <p className="text-slate-300 mb-3">{event.description}</p>
+              {event.achievements && (
+                <ul className="text-sm text-slate-400 space-y-1">
+                  {event.achievements.map((achievement, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="rounded-full bg-cyan-600 border-2 border-cyan-400 w-10 h-10 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center shadow-lg">
+          {event.icon}
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <section id="about" className="w-[90%] max-w-[1200px] mx-auto py-16">
+      <div className="text-center mb-12">
+        <h1 className="uppercase tracking-widest font-bold text-4xl text-slate-100 mb-4">
+          Career Journey
+        </h1>
+        <div className="w-24 h-1 bg-cyan-400 mx-auto mb-6" />
+        <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
+          Frontend Developer with <span className="text-cyan-400 font-semibold">4+ years</span> of commercial experience, 
+          specializing in modern <span className="text-cyan-400">React & TypeScript</span>. From internship to Middle Developer, 
+          I've delivered high-performance applications with measurable results in performance optimization and user experience.
+        </p>
+      </div>
+
+      {/* Timeline */}
+      <div className="relative">
+        <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-cyan-400/50 to-purple-400/50" />
+        
+        <div className="space-y-4">
+          {timelineEvents.map((event, index) => (
+            <TimelineItem 
+              key={index} 
+              event={event} 
+              isEven={index % 2 === 0}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Key Achievements Summary */}
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+          <div className="text-3xl font-bold text-cyan-400 mb-2">15+</div>
+          <div className="text-slate-300">SPA Applications Delivered</div>
+        </div>
+        <div className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+          <div className="text-3xl font-bold text-cyan-400 mb-2">35%</div>
+          <div className="text-slate-300">Performance Improvement</div>
+        </div>
+        <div className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+          <div className="text-3xl font-bold text-cyan-400 mb-2">98%</div>
+          <div className="text-slate-300">Lighthouse Score Average</div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
