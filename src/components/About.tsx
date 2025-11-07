@@ -5,6 +5,7 @@ import { GoRocket } from "react-icons/go"
 import { SiFreelancer } from "react-icons/si"
 import { FaLaptopCode } from "react-icons/fa"
 import { useTranslation } from "../hooks/useTranslation"
+import { useMemo } from "react"
 
 interface TimelineEvent {
   date: string
@@ -15,9 +16,9 @@ interface TimelineEvent {
 }
 
 const About = () => {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
 
-  const timelineEvents: TimelineEvent[] = [
+  const timelineEvents: TimelineEvent[] = useMemo(() => [
     {
       date: t('about.timeline.0.date'),
       title: t('about.timeline.0.title'),
@@ -53,7 +54,7 @@ const About = () => {
       icon: <BsGraphUp className="text-slate-100" size={18} />,
       achievements: t('about.timeline.4.achievements', { returnObjects: true })
     }
-  ];
+  ], [t, language])
 
   // Анимации
   const containerVariants = {
