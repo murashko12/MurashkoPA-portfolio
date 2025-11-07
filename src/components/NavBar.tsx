@@ -84,6 +84,15 @@ const NavBar = () => {
         setActiveLink(to)
     }
 
+    const scrollSettings = {
+        smooth: true,
+        duration: 500,
+        spy: true,
+        offset: -400,
+        delay: 100,
+        isDynamic: true
+    }
+
     return (
         <>
             {/* Desktop Navigation */}
@@ -106,9 +115,7 @@ const NavBar = () => {
                                 >
                                     <Link
                                         to={link}
-                                        smooth={true}
-                                        duration={500}
-                                        spy={true}
+                                        {...scrollSettings}
                                         onSetActive={handleSetActive}
                                         className={`
                                             relative px-6 py-2 rounded-full text-sm font-medium cursor-pointer transition-all duration-300
@@ -210,9 +217,7 @@ const NavBar = () => {
                                             >
                                                 <Link
                                                     to={link}
-                                                    smooth={true}
-                                                    duration={500}
-                                                    spy={true}
+                                                    {...scrollSettings}
                                                     onSetActive={handleSetActive}
                                                     onClick={() => setNav(false)}
                                                     className={`
