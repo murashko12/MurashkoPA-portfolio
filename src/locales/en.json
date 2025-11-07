@@ -99,5 +99,23 @@
       "viewCode": "View Code",
       "liveDemo": "Live Demo"
     }
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "description": "My technology stack includes <strong>modern frontend tools</strong> and methodologies that I actively use in commercial projects to deliver <strong>high-quality, performant applications</strong>.",
+    "categories": {
+      "core": "Core Technologies",
+      "testing": "Testing & Tools",
+      "backend": "Backend & DevOps"
+    },
+    "continuousLearning": {
+      "title": "Continuous Learning",
+      "description": "I consistently stay updated with the latest web technologies and best practices through <strong>online courses, tech communities, and hands-on projects</strong>. Currently exploring advanced React patterns and cloud technologies."
+    },
+    "levels": {
+      "beginner": "Beginner",
+      "advanced": "Advanced"
+    }
   }
 }
+

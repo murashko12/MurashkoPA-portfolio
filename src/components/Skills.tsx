@@ -1,8 +1,10 @@
 import SkillComponent from "./SkillComponent"
 import { motion } from "framer-motion"
 import { SkillsItems } from "../constants/SkillsItems"
+import { useTranslation } from "../hooks/useTranslation"
 
 const Skills = () => {
+    const { t } = useTranslation()
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -33,24 +35,23 @@ const Skills = () => {
 
     const skillCategories = [
         {
-            title: "Core Technologies",
+            title: t('skills.categories.core'),
             skills: SkillsItems.slice(0, 8)
         },
         {
-            title: "Testing & Tools",
+            title: t('skills.categories.testing'),
             skills: SkillsItems.slice(8, 11)
         },
         {
-            title: "Backend & DevOps",
+            title: t('skills.categories.backend'),
             skills: SkillsItems.slice(11)
         }
     ]
 
-  return (
+    return (
         <section id="skills" className="w-[90%] max-w-[1200px] mx-auto py-20">
             
-        {/* Header */}
-
+            {/* Header */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -59,18 +60,16 @@ const Skills = () => {
                 className="text-center mb-16"
             >
                 <h1 className="uppercase tracking-widest font-bold text-4xl text-slate-100 mb-4">
-                    Technical Skills
+                    {t('skills.title')}
                 </h1>
                 <div className="w-24 h-1 bg-cyan-400 mx-auto mb-6" />
-                <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-                    My technology stack includes <span className="text-cyan-400">modern frontend tools</span> and 
-                    methodologies that I actively use in commercial projects to deliver 
-                    <span className="text-cyan-400"> high-quality, performant applications</span>.
-                </p>
+                <p 
+                    className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: t('skills.description') }}
+                />
             </motion.div>
             
-        {/* Skills grid */}
-
+            {/* Skills grid */}
             <div className="space-y-12">
                 {skillCategories.map((category, categoryIndex) => (
                     <motion.div
@@ -109,8 +108,7 @@ const Skills = () => {
                 ))}
             </div>
 
-        {/* Additional Info */}
-
+            {/* Additional Info */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -120,13 +118,12 @@ const Skills = () => {
             >
                 <div className="bg-slate-800/30 rounded-2xl p-8 border border-cyan-400/20">
                     <h3 className="text-xl font-bold text-cyan-400 mb-4">
-                        Continuous Learning
+                        {t('skills.continuousLearning.title')}
                     </h3>
-                    <p className="text-slate-300">
-                        I consistently stay updated with the latest web technologies and best practices through 
-                        <span className="text-cyan-400"> online courses, tech communities, and hands-on projects</span>. 
-                        Currently exploring advanced React patterns and cloud technologies.
-                    </p>
+                    <p 
+                        className="text-slate-300"
+                        dangerouslySetInnerHTML={{ __html: t('skills.continuousLearning.description') }}
+                    />
                 </div>
             </motion.div>
         </section>
