@@ -1,0 +1,67 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "portfolio": "Projects",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "home": {
+        "name": "Petr Murashko",
+        "title": "Frontend",
+        "developer": "Developer",
+        "description": "React & TypeScript Specialist with <strong>4+ years</strong> of experience. Passionate about building <strong>high-performance</strong> web applications with modern technologies and clean architecture.",
+        "downloadCV": "Download CV",
+        "photoAlt": "Petr Murashko - Frontend Developer"
+    },
+    "about": {
+        "title": "Career Journey",
+        "description": "Frontend Developer with <strong>4+ years</strong> of commercial experience, specializing in modern <strong>React & TypeScript</strong>. From internship to Middle Developer, I've delivered high-performance applications with measurable results in performance optimization and user experience.",
+        "timeline": [
+            {
+                "date": "2021 September",
+                "title": "Logistics Engineering Center",
+                "description": "Development of the client side of the company's website",
+                "achievements": ["First commercial project", "SPA development", "Client-side architecture"]
+            },
+            {
+                "date": "2022 March",
+                "title": "Thmoon Startup",
+                "description": "Frontend Developer Intern",
+                "achievements": ["React & TypeScript", "Startup environment", "Agile development"]
+            },
+            {
+                "date": "2023 February",
+                "title": "Thmoon Startup",
+                "description": "Junior → Middle Frontend Developer",
+                "achievements": ["15+ SPA applications", "98% Lighthouse score", "Team leadership"]
+            },
+            {
+                "date": "2023 February - September",
+                "title": "Turing IT School at MPEI",
+                "description": "Website development for the IT school",
+                "achievements": ["University project", "Educational platform", "Modern stack implementation"]
+            },
+            {
+                "date": "2024 June - Present",
+                "title": "G-Lab LLC",
+                "description": "Middle Frontend Developer",
+                "achievements": ["UI system development", "35% performance improvement", "Architecture optimization"]
+            }
+        ],
+        "stats": [
+            {
+                "number": "15+",
+                "label": "SPA Applications"
+            },
+            {
+                "number": "35%",
+                "label": "Performance Improvement"
+            },
+            {
+                "number": "98%",
+                "label": "Lighthouse Score"
+            }
+        ]
+    }
+}

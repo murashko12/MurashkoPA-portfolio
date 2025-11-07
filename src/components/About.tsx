@@ -4,6 +4,7 @@ import { GiTeacher, GiSpiderWeb } from "react-icons/gi"
 import { GoRocket } from "react-icons/go"
 import { SiFreelancer } from "react-icons/si"
 import { FaLaptopCode } from "react-icons/fa"
+import { useTranslation } from "../hooks/useTranslation"
 
 interface TimelineEvent {
   date: string
@@ -13,42 +14,44 @@ interface TimelineEvent {
   achievements?: string[]
 }
 
-const About: React.FC = () => {
+const About = () => {
+  const { t } = useTranslation()
+
   const timelineEvents: TimelineEvent[] = [
     {
-      date: "2021 September",
-      title: "Logistics Engineering Center",
-      description: "Development of the client side of the company's website",
+      date: t('about.timeline.0.date'),
+      title: t('about.timeline.0.title'),
+      description: t('about.timeline.0.description'),
       icon: <GiSpiderWeb className="text-slate-100" size={18} />,
-      achievements: ["First commercial project", "SPA development", "Client-side architecture"]
+      achievements: t('about.timeline.0.achievements', { returnObjects: true })
     },
     {
-      date: "2022 March",
-      title: "Thmoon Startup",
-      description: "Frontend Developer Intern",
+      date: t('about.timeline.1.date'),
+      title: t('about.timeline.1.title'),
+      description: t('about.timeline.1.description'),
       icon: <SiFreelancer className="text-slate-100" size={18} />,
-      achievements: ["React & TypeScript", "Startup environment", "Agile development"]
+      achievements: t('about.timeline.1.achievements', { returnObjects: true })
     },
     {
-      date: "2023 February",
-      title: "Thmoon Startup",
-      description: "Junior → Middle Frontend Developer",
+      date: t('about.timeline.2.date'),
+      title: t('about.timeline.2.title'),
+      description: t('about.timeline.2.description'),
       icon: <BsRocketTakeoff className="text-slate-100" size={18} />,
-      achievements: ["15+ SPA applications", "98% Lighthouse score", "Team leadership"]
+      achievements: t('about.timeline.2.achievements', { returnObjects: true })
     },
     {
-      date: "2023 February - September",
-      title: "Turing IT School at MPEI",
-      description: "Website development for the IT school",
+      date: t('about.timeline.3.date'),
+      title: t('about.timeline.3.title'),
+      description: t('about.timeline.3.description'),
       icon: <GiTeacher className="text-slate-100" size={18} />,
-      achievements: ["University project", "Educational platform", "Modern stack implementation"]
+      achievements: t('about.timeline.3.achievements', { returnObjects: true })
     },
     {
-      date: "2024 June - Present",
-      title: "G-Lab LLC",
-      description: "Middle Frontend Developer",
+      date: t('about.timeline.4.date'),
+      title: t('about.timeline.4.title'),
+      description: t('about.timeline.4.description'),
       icon: <BsGraphUp className="text-slate-100" size={18} />,
-      achievements: ["UI system development", "35% performance improvement", "Architecture optimization"]
+      achievements: t('about.timeline.4.achievements', { returnObjects: true })
     }
   ];
 
@@ -167,7 +170,7 @@ const About: React.FC = () => {
               </motion.p>
               {event.achievements && (
                 <motion.ul className="text-sm text-slate-400 space-y-1">
-                  {event.achievements.map((achievement, achievementIndex) => (
+                  {(event.achievements as string[]).map((achievement, achievementIndex) => (
                     <motion.li 
                       key={achievementIndex} 
                       className="flex items-center gap-2 group-hover:text-slate-300 transition-colors"
@@ -208,7 +211,7 @@ const About: React.FC = () => {
         className="text-center mb-12"
       >
         <h1 className="uppercase tracking-widest font-bold text-4xl text-slate-100 mb-4">
-          Career Journey
+          {t('about.title')}
         </h1>
         <div className="w-24 h-1 bg-cyan-400 mx-auto mb-6" />
         <motion.p 
@@ -217,11 +220,8 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          Frontend Developer with <span className="text-cyan-400 font-semibold">4+ years</span> of commercial experience, 
-          specializing in modern <span className="text-cyan-400">React & TypeScript</span>. From internship to Middle Developer, 
-          I've delivered high-performance applications with measurable results in performance optimization and user experience.
-        </motion.p>
+          dangerouslySetInnerHTML={{ __html: t('about.description') }}
+        />
       </motion.div>
 
       {/* Timeline */}
@@ -255,9 +255,21 @@ const About: React.FC = () => {
         className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
       >
         {[
-          { number: "15+", label: "SPA Applications", icon: <FaLaptopCode className="text-cyan-400" size={24} /> },
-          { number: "35%", label: "Performance Improvement", icon: <BsLightningFill className="text-cyan-400" size={24} /> },
-          { number: "98%", label: "Lighthouse Score", icon: <GoRocket className="text-cyan-400" size={24} /> }
+          { 
+            number: t('about.stats.0.number'), 
+            label: t('about.stats.0.label'), 
+            icon: <FaLaptopCode className="text-cyan-400" size={24} /> 
+          },
+          { 
+            number: t('about.stats.1.number'), 
+            label: t('about.stats.1.label'), 
+            icon: <BsLightningFill className="text-cyan-400" size={24} /> 
+          },
+          { 
+            number: t('about.stats.2.number'), 
+            label: t('about.stats.2.label'), 
+            icon: <GoRocket className="text-cyan-400" size={24} /> 
+          }
         ].map((stat, index) => (
           <motion.div
             key={index}

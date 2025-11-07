@@ -1,9 +1,11 @@
 import { motion } from "framer-motion"
 import { FaTelegram, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
 import { FiDownload } from "react-icons/fi"
+import { useTranslation } from "../hooks/useTranslation"
 
 import myPhoto from '../images/MurashkoPA.png'
-import myResume from '../assets/MurashkoPA-CV(EN).pdf'
+import myResumeEN from '../assets/MurashkoPA-CV(EN).pdf'
+import myResumeRU from '../assets/MurashkoPA-CV(RU).pdf'
 
 interface SocialLink {
     id: number
@@ -13,6 +15,8 @@ interface SocialLink {
 }
 
 const Home = () => {
+    const { t, language } = useTranslation()
+
     const socialLinks: SocialLink[] = [
         {
             id: 1,
@@ -99,6 +103,12 @@ const Home = () => {
         }
     }
 
+    // Выбираем резюме в зависимости от языка
+    const currentResume = language === 'en' ? myResumeEN : myResumeRU
+    const resumeFileName = language === 'en' 
+        ? "Petr_Murashko_Resume_EN.pdf" 
+        : "Petr_Murashko_Resume_RU.pdf"
+
     return (
         <motion.section
             id="home"
@@ -115,7 +125,7 @@ const Home = () => {
                         variants={textVariants}
                         className="uppercase tracking-widest font-semibold text-2xl text-cyan-400 mb-4"
                     >
-                        Petr Murashko
+                        {t('home.name')}
                     </motion.h3>
                 
                     <motion.div 
@@ -123,10 +133,10 @@ const Home = () => {
                         className="mb-8"
                     >
                         <h1 className="uppercase text-5xl lg:text-7xl font-bold text-slate-100 leading-tight">
-                            Frontend
+                            {t('home.title')}
                             <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-                                Developer
+                                {t('home.developer')}
                             </span>
                         </h1>
                     </motion.div>
@@ -134,11 +144,8 @@ const Home = () => {
                     <motion.p 
                         variants={textVariants}
                         className="text-slate-300 text-lg mb-8 max-w-2xl leading-relaxed"
-                    >
-                        React & TypeScript Specialist with <span className="text-cyan-400 font-semibold">4+ years</span> of experience. 
-                        Passionate about building <span className="text-cyan-400">high-performance</span> web applications 
-                        with modern technologies and clean architecture.
-                    </motion.p>
+                        dangerouslySetInnerHTML={{ __html: t('home.description') }}
+                    />
 
                     {/* Actions */}
                     <motion.div 
@@ -151,8 +158,8 @@ const Home = () => {
                             className="flex items-center gap-3 bg-cyan-600 hover:bg-cyan-700 text-slate-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 border-2 border-cyan-400 shadow-lg"
                         >
                             <FiDownload size={20} />
-                            <a href={myResume} download="Petr_Murashko_Resume.pdf">
-                                Download CV
+                            <a href={currentResume} download={resumeFileName}>
+                                {t('home.downloadCV')}
                             </a>
                         </motion.button>
 
@@ -176,7 +183,7 @@ const Home = () => {
                     </motion.div>
                 </motion.div>
 
-        {/* Photo */}
+                {/* Photo */}
                 <motion.div
                     variants={photoVariants}
                     className="flex-1 flex justify-center lg:justify-end"
@@ -184,13 +191,13 @@ const Home = () => {
                     <div className="relative">
                         <motion.img
                             src={myPhoto} 
-                            alt="Petr Murashko"
+                            alt={t('home.photoAlt')}
                             className="w-80 h-96 rounded-2xl object-cover border-4 border-cyan-400 shadow-2xl"
                             whileHover={{ scale: 1.02 }}
                             transition={{ duration: 0.3 }}
                         />
                         <motion.div
-                            className="absolute -inset-4 rounded-2xl border-2 border-cyan-400/30 -z-10"
+                            className="absolute -inset-4 rounded-2xl border-2 border-cyan-400/70"
                             animate={{
                                 rotate: [0, 5, -5, 0],
                             }}

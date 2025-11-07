@@ -2,6 +2,8 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { IoMenu, IoClose } from "react-icons/io5"
 import { Link } from "react-scroll"
+import { useLanguage } from "../contexts/LanguageContext"
+import { useTranslation } from "../hooks/useTranslation"
 
 type NavBarPoint = {
     id: number
@@ -12,13 +14,15 @@ type NavBarPoint = {
 const NavBar = () => {
     const [nav, setNav] = useState<boolean>(false)
     const [activeLink, setActiveLink] = useState<string>('home')
+    const { language, toggleLanguage } = useLanguage()
+    const { t } = useTranslation()
 
     const links: NavBarPoint[] = [
-        { id: 1, link: 'home', label: 'Home' },
-        { id: 2, link: 'about', label: 'About' },
-        { id: 3, link: 'portfolio', label: 'Projects' },
-        { id: 4, link: 'skills', label: 'Skills' },
-        { id: 5, link: 'contact', label: 'Contact' }
+        { id: 1, link: 'home', label: t('nav.home') },
+        { id: 2, link: 'about', label: t('nav.about') },
+        { id: 3, link: 'portfolio', label: t('nav.portfolio') },
+        { id: 4, link: 'skills', label: t('nav.skills') },
+        { id: 5, link: 'contact', label: t('nav.contact') }
     ]
 
     const containerVariants = {
@@ -82,6 +86,7 @@ const NavBar = () => {
 
     return (
         <>
+            {/* Desktop Navigation */}
             <motion.header
                 initial="hidden"
                 whileInView="visible"
@@ -126,11 +131,27 @@ const NavBar = () => {
                                     </Link>
                                 </motion.li>
                             ))}
+                            
+                            {/* Language Switcher - Desktop */}
+                            <motion.li
+                                variants={itemVariants}
+                                custom={6}
+                            >
+                                <motion.button
+                                    onClick={toggleLanguage}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-slate-100 transition-all duration-300 border border-slate-600 hover:border-cyan-400 ml-2"
+                                >
+                                    {language === 'en' ? 'RU' : 'EN'}
+                                </motion.button>
+                            </motion.li>
                         </motion.ul>
                     </motion.nav>
                 </div>
             </motion.header>
 
+            {/* Mobile Menu Button */}
             <motion.button
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -142,9 +163,11 @@ const NavBar = () => {
                 {nav ? <IoClose size={20} /> : <IoMenu size={20} />}
             </motion.button>
 
+            {/* Mobile Navigation */}
             <AnimatePresence>
                 {nav && (
                     <>
+                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -153,6 +176,7 @@ const NavBar = () => {
                             className="fixed inset-0 z-40 bg-slate-900/80 backdrop-blur-sm lg:hidden"
                         />
                         
+                        {/* Mobile Menu */}
                         <motion.div
                             variants={mobileMenuVariants}
                             initial="closed"
@@ -162,6 +186,7 @@ const NavBar = () => {
                         >
                             <div className="flex flex-col h-full pt-20 px-8">
 
+                                {/* Profile Info */}
                                 <motion.div
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -172,6 +197,7 @@ const NavBar = () => {
                                     <p className="text-slate-400 text-sm">Frontend Developer</p>
                                 </motion.div>
 
+                                {/* Navigation Links */}
                                 <nav className="flex-1">
                                     <ul className="space-y-4">
                                         {links.map(({ id, link, label }) => (
@@ -201,16 +227,37 @@ const NavBar = () => {
                                                 </Link>
                                             </motion.li>
                                         ))}
+                                        
+                                        {/* Language Switcher - Mobile */}
+                                        <motion.li
+                                            custom={6}
+                                            variants={mobileItemVariants}
+                                            initial="closed"
+                                            animate="open"
+                                        >
+                                            <button
+                                                onClick={() => {
+                                                    toggleLanguage()
+                                                    setNav(false)
+                                                }}
+                                                className="w-full px-6 py-4 rounded-xl text-lg font-medium text-slate-300 border border-slate-600 hover:text-slate-100 hover:border-cyan-400 transition-all duration-300 text-left"
+                                            >
+                                                {language === 'en' ? 'Русский' : 'English'}
+                                            </button>
+                                        </motion.li>
                                     </ul>
                                 </nav>
 
+                                {/* Contact Info */}
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.6 }}
                                     className="pb-8 pt-12 border-t border-slate-700"
                                 >
-                                    <p className="text-slate-400 text-sm mb-4">Get in touch</p>
+                                    <p className="text-slate-400 text-sm mb-4">
+                                        {language === 'en' ? 'Get in touch' : 'Связаться со мной'}
+                                    </p>
                                     <a
                                         href="mailto:petr@ocumare.ru"
                                         className="text-cyan-400 hover:text-cyan-300 transition-colors"
