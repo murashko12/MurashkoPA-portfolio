@@ -1,29 +1,31 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { FaPaperPlane, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa"
+import { useTranslation } from "../hooks/useTranslation"
 
 const Contact = () => {
   const [name, setName] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [message, setMessage] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const { t } = useTranslation()
 
   const contactInfo = [
     {
       icon: <FaMapMarkerAlt className="text-cyan-400" size={20} />,
-      title: "Location",
+      title: t('contact.contactInfo.location'),
       value: "Moscow, Russia",
       link: null
     },
     {
       icon: <FaPhone className="text-cyan-400" size={20} />,
-      title: "Phone",
+      title: t('contact.contactInfo.phone'),
       value: "+7 (903) 176-77-88",
       link: "tel:+79031767788"
     },
     {
       icon: <FaEnvelope className="text-cyan-400" size={20} />,
-      title: "Email",
+      title: t('contact.contactInfo.email'),
       value: "petr@ocumare.ru",
       link: "mailto:petr@ocumare.ru"
     }
@@ -73,14 +75,13 @@ const Contact = () => {
         className="text-center mb-16"
       >
         <h1 className="uppercase tracking-widest font-bold text-4xl text-slate-100 mb-4">
-          Get In Touch
+          {t('contact.title')}
         </h1>
         <div className="w-24 h-1 bg-cyan-400 mx-auto mb-6" />
-        <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-          Have a project in mind or want to discuss potential opportunities? 
-          <span className="text-cyan-400"> I'd love to hear from you</span>. 
-          Let's create something amazing together.
-        </p>
+        <p 
+          className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: t('contact.description') }}
+        />
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -96,7 +97,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-2xl font-bold text-cyan-400 mb-6"
           >
-            Contact Information
+            {t('contact.contactInfo.title')}
           </motion.h3>
           
           {contactInfo.map((item, index) => (
@@ -132,11 +133,10 @@ const Contact = () => {
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-slate-200 font-semibold">Available for work</span>
+              <span className="text-slate-200 font-semibold">{t('contact.availability.title')}</span>
             </div>
             <p className="text-slate-400 text-sm">
-              I'm currently open to new opportunities and projects. 
-              Feel free to reach out!
+              {t('contact.availability.description')}
             </p>
           </motion.div>
         </motion.div>
@@ -159,14 +159,14 @@ const Contact = () => {
               {/* Name Field */}
               <div className="space-y-2">
                 <label htmlFor="name" className="text-slate-300 text-sm font-medium">
-                  Your Name *
+                  {t('contact.form.name.label')}
                 </label>
                 <input 
                   id="name"
                   className="w-full bg-slate-800/50 border border-slate-600 p-4 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300"
                   type="text" 
                   name="name" 
-                  placeholder="Enter your name"
+                  placeholder={t('contact.form.name.placeholder')}
                   value={name}
                   onChange={event => setName(event.target.value)}
                   required
@@ -176,14 +176,14 @@ const Contact = () => {
               {/* Email Field */}
               <div className="space-y-2">
                 <label htmlFor="email" className="text-slate-300 text-sm font-medium">
-                  Your Email *
+                  {t('contact.form.email.label')}
                 </label>
                 <input 
                   id="email"
                   className="w-full bg-slate-800/50 border border-slate-600 p-4 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300"
                   type="email" 
                   name="email" 
-                  placeholder="Enter your email"
+                  placeholder={t('contact.form.email.placeholder')}
                   value={email}
                   onChange={event => setEmail(event.target.value)}
                   required
@@ -194,13 +194,13 @@ const Contact = () => {
             {/* Message Field */}
             <div className="space-y-2">
               <label htmlFor="message" className="text-slate-300 text-sm font-medium">
-                Your Message *
+                {t('contact.form.message.label')}
               </label>
               <textarea 
                 id="message"
                 className="w-full bg-slate-800/50 border border-slate-600 p-4 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 resize-none"
                 name="message" 
-                placeholder="Tell me about your project or opportunity..."
+                placeholder={t('contact.form.message.placeholder')}
                 rows={6}
                 value={message}
                 onChange={event => setMessage(event.target.value)}
@@ -225,19 +225,19 @@ const Contact = () => {
               {isSubmitting ? (
                 <>
                   <div className="w-5 h-5 border-2 border-slate-100 border-t-transparent rounded-full animate-spin" />
-                  Sending...
+                  {t('contact.form.submit.sending')}
                 </>
               ) : (
                 <>
                   <FaPaperPlane size={16} />
-                  Send Message
+                  {t('contact.form.submit.send')}
                 </>
               )}
             </motion.button>
 
             {/* Form Note */}
             <p className="text-slate-400 text-sm">
-              * Required fields. I typically respond within 24 hours.
+              {t('contact.form.note')}
             </p>
           </form>
         </motion.div>
