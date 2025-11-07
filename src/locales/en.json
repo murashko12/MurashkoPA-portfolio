@@ -63,5 +63,41 @@
                 "label": "Lighthouse Score"
             }
         ]
+    },
+    "portfolio": {
+    "title": "Featured Projects",
+    "description": "A collection of my recent work showcasing modern web development practices, <strong>clean code architecture</strong>, and <strong>user-centered design</strong>.",
+    "stats": [
+      {
+        "number": "6+",
+        "label": "Projects"
+      },
+      {
+        "number": "4+",
+        "label": "Technologies"
+      },
+      {
+        "number": "98%",
+        "label": "Lighthouse"
+      },
+      {
+        "number": "100%",
+        "label": "Responsive"
+      }
+    ],
+    "projects": {
+      "campApp": "Camping reservation platform with modern UI and booking system",
+      "passwordGenerator": "Secure password generator with customization options and strength indicators",
+      "githubSearch": "GitHub user search application with repositories display and user analytics",
+      "watchShop": "E-commerce watch store with product catalog and shopping cart functionality",
+      "kanbanBoard": "Drag & drop task management board with local storage persistence",
+      "ecommerceApp": "Modern e-commerce platform with cart management and product filtering"
+    },
+    "viewMore": "Interested in seeing more? Check out my GitHub for additional projects and contributions.",
+    "viewAllProjects": "View All Projects",
+    "buttons": {
+      "viewCode": "View Code",
+      "liveDemo": "Live Demo"
     }
+  }
 }

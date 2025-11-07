@@ -1,8 +1,14 @@
 import ProjectCard from "./ProjectCard"
 import { motion } from "framer-motion"
-import { ProjectsItems } from "../constants/ProjectsItems"
+import { getProjectsItems } from "../constants/ProjectsItems"
+import { useTranslation } from "../hooks/useTranslation"
+import { useMemo } from "react"
 
 const Portfolio = () => {
+    const { t } = useTranslation()
+
+    const projectsItems = useMemo(() => getProjectsItems(t), [t])
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -50,14 +56,13 @@ const Portfolio = () => {
                 className="text-center mb-16"
             >
                 <h1 className="uppercase tracking-widest font-bold text-4xl text-slate-100 mb-4">
-                    Featured Projects
+                    {t('portfolio.title')}
                 </h1>
                 <div className="w-24 h-1 bg-cyan-400 mx-auto mb-6" />
-                <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-                    A collection of my recent work showcasing modern web development practices, 
-                    <span className="text-cyan-400"> clean code architecture</span>, and 
-                    <span className="text-cyan-400"> user-centered design</span>.
-                </p>
+                <p 
+                    className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: t('portfolio.description') }}
+                />
             </motion.div>
 
             {/* Stats */}
@@ -69,10 +74,10 @@ const Portfolio = () => {
                 className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
             >
                 {[
-                    { number: "6+", label: "Projects" },
-                    { number: "4+", label: "Technologies" },
-                    { number: "98%", label: "Lighthouse" },
-                    { number: "100%", label: "Responsive" }
+                    { number: t('portfolio.stats.0.number'), label: t('portfolio.stats.0.label') },
+                    { number: t('portfolio.stats.1.number'), label: t('portfolio.stats.1.label') },
+                    { number: t('portfolio.stats.2.number'), label: t('portfolio.stats.2.label') },
+                    { number: t('portfolio.stats.3.number'), label: t('portfolio.stats.3.label') }
                 ].map((stat, index) => (
                     <motion.div
                         key={index}
@@ -93,7 +98,7 @@ const Portfolio = () => {
                 viewport={{ once: true }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-                {ProjectsItems.map((project) => (
+                {projectsItems.map((project) => (
                     <motion.div
                         key={project.id}
                         variants={itemVariants}
@@ -112,7 +117,7 @@ const Portfolio = () => {
                 className="text-center mt-16"
             >
                 <p className="text-slate-300 mb-6">
-                    Interested in seeing more? Check out my GitHub for additional projects and contributions.
+                    {t('portfolio.viewMore')}
                 </p>
                 <motion.a
                     href="https://github.com/murashko12"
@@ -122,7 +127,7 @@ const Portfolio = () => {
                     whileTap={{ scale: 0.95 }}
                     className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-slate-100 px-6 py-3 rounded-lg font-semibold transition-all duration-300 border border-cyan-400"
                 >
-                    View All Projects
+                    {t('portfolio.viewAllProjects')}
                 </motion.a>
             </motion.div>
         </section>

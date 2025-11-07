@@ -1,5 +1,6 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
 import { motion } from "framer-motion"
+import { useTranslation } from "../hooks/useTranslation"
 
 export interface IProjectParams {
     id: number
@@ -12,9 +13,11 @@ export interface IProjectParams {
 }
 
 const ProjectCard: React.FC<IProjectParams> = (props) => {
+    const { t } = useTranslation()
+
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.8 },
-            visible: {
+        visible: {
             opacity: 1,
             scale: 1,
             transition: {
@@ -33,7 +36,7 @@ const ProjectCard: React.FC<IProjectParams> = (props) => {
 
     const overlayVariants = {
         hidden: { opacity: 0 },
-            visible: {
+        visible: {
             opacity: 1,
             transition: {
                 duration: 0.3,
@@ -76,42 +79,42 @@ const ProjectCard: React.FC<IProjectParams> = (props) => {
         <motion.div
             variants={cardVariants}
             whileHover="hover"
-            className="relative overflow-hidden rounded-2xl bg-slate-800/30 border border-slate-700 shadow-2xl group h-96" // Добавлена фиксированная высота
+            className="relative overflow-hidden rounded-2xl bg-slate-800/30 border border-slate-700 shadow-2xl group h-96"
         >
-        {/* Project Image - растянута на всю карточку */}
-        <div className="absolute inset-0">
-            <img
-                src={props.imgName}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                alt={props.titleProject}
-            />
-            
-            {/* Темный оверлей для лучшей читаемости текста */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
-        </div>
+            {/* Project Image - растянута на всю карточку */}
+            <div className="absolute inset-0">
+                <img
+                    src={props.imgName}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    alt={props.titleProject}
+                />
+                
+                {/* Темный оверлей для лучшей читаемости текста */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
+            </div>
 
-      {/* Название проекта поверх изображения */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-            <h3 className="text-xl font-bold text-slate-100 capitalize text-center bg-slate-800/80 backdrop-blur-sm py-3 px-4 rounded-xl border border-slate-600">
-                {props.titleProject}
-            </h3>
-        </div>
-
-      {/* Hover Overlay with Additional Info */}
-        <motion.div
-            variants={overlayVariants}
-            initial="hidden"
-            whileHover="visible"
-            className="absolute inset-0 bg-slate-900/95 backdrop-blur-sm flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"
-        >
-            <motion.div
-                variants={contentVariants}
-                className="text-center"
-            >
-                <h3 className="text-2xl font-bold text-cyan-400 mb-4 capitalize">
+            {/* Название проекта поверх изображения */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                <h3 className="text-xl font-bold text-slate-100 capitalize text-center bg-slate-800/80 backdrop-blur-sm py-3 px-4 rounded-xl border border-slate-600">
                     {props.titleProject}
                 </h3>
-          
+            </div>
+
+            {/* Hover Overlay with Additional Info */}
+            <motion.div
+                variants={overlayVariants}
+                initial="hidden"
+                whileHover="visible"
+                className="absolute inset-0 bg-slate-900/95 backdrop-blur-sm flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"
+            >
+                <motion.div
+                    variants={contentVariants}
+                    className="text-center"
+                >
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-4 capitalize">
+                        {props.titleProject}
+                    </h3>
+            
                     <p className="text-slate-200 mb-6 leading-relaxed">
                         {props.description}
                     </p>
@@ -138,7 +141,7 @@ const ProjectCard: React.FC<IProjectParams> = (props) => {
                             className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-100 px-6 py-3 rounded-lg font-medium transition-all duration-300 border border-slate-600"
                         >
                             <FaGithub size={18} />
-                            View Code
+                            {t('portfolio.buttons.viewCode')}
                         </motion.a>
                         
                         <motion.a
@@ -149,8 +152,8 @@ const ProjectCard: React.FC<IProjectParams> = (props) => {
                             whileHover="hover"
                             className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-slate-100 px-6 py-3 rounded-lg font-medium transition-all duration-300 border border-cyan-400"
                         >
-                        <FaExternalLinkAlt size={16} />
-                            Live Demo
+                            <FaExternalLinkAlt size={16} />
+                            {t('portfolio.buttons.liveDemo')}
                         </motion.a>
                     </div>
                 </motion.div>

@@ -137,7 +137,7 @@ const About = () => {
   const TimelineItem = ({ event, isEven }: { event: TimelineEvent; isEven: boolean; index: number }) => (
     <motion.div
       variants={timelineItemVariants}
-      className="mt-6 sm:mt-0 sm:mb-12"
+      className="mt-6 sm:mt-0 sm:mb-12 relative" // Добавлен relative здесь
     >
       <div className="flex flex-col sm:flex-row items-center">
         <div className={`flex ${isEven ? 'justify-start' : 'justify-end'} w-full mx-auto items-center`}>
@@ -190,13 +190,17 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-        <motion.div
-          variants={iconVariants}
-          whileHover="hover"
-          className="rounded-full bg-cyan-600 border-2 border-cyan-400 w-10 h-10 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center shadow-lg z-10"
-        >
-          {event.icon}
-        </motion.div>
+        
+        {/* Иконка с исправленным позиционированием */}
+        <div className="absolute left-1/2 -translate-x-1/2 -translate-y-4 sm:translate-y-0 w-10 h-10 flex items-center justify-center z-10">
+          <motion.div
+            variants={iconVariants}
+            whileHover="hover"
+            className="rounded-full bg-cyan-600 border-2 border-cyan-400 w-10 h-10 flex items-center justify-center shadow-lg"
+          >
+            {event.icon}
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );

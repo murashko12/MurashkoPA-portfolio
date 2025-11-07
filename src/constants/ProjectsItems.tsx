@@ -26,7 +26,7 @@ const StackIcons: Record<string, JSX.Element> = {
     "Tailwindcss": <SiTailwindcss className="text-cyan-400" size={24} />
 }
 
-export const ProjectsItems: IProjectParams[] = [
+export const getProjectsItems = (t: (key: string) => string): IProjectParams[] => [
     {
         id: 1,
         imgName: campApp,
@@ -34,7 +34,7 @@ export const ProjectsItems: IProjectParams[] = [
         stackProject: [StackIcons["Next"], StackIcons["TS"], StackIcons["Tailwindcss"]],
         linkCode: 'https://github.com/murashko12/camp-app-ts/tree/main',
         linkDemo: 'https://camp-app-ts.vercel.app/',
-        description: "Camping reservation platform with modern UI and booking system"
+        description: t('portfolio.projects.campApp')
     },
     {
         id: 2,
@@ -43,7 +43,7 @@ export const ProjectsItems: IProjectParams[] = [
         stackProject: [StackIcons["React"], StackIcons["TS"], StackIcons["Mui"]],
         linkCode: 'https://github.com/murashko12/password-generator-ts',
         linkDemo: 'https://password-generator-ts-xi.vercel.app/',
-        description: "Secure password generator with customization options and strength indicators"
+        description: t('portfolio.projects.passwordGenerator')
     },
     {
         id: 3,
@@ -52,7 +52,7 @@ export const ProjectsItems: IProjectParams[] = [
         stackProject: [StackIcons["React"], StackIcons["TS"], StackIcons["Tailwindcss"], StackIcons["Redux"]],
         linkCode: 'https://github.com/murashko12/github-search',
         linkDemo: 'https://github-search-eight-bay.vercel.app/',
-        description: "GitHub user search application with repositories display and user analytics"
+        description: t('portfolio.projects.githubSearch')
     },
     {
         id: 4,
@@ -61,7 +61,7 @@ export const ProjectsItems: IProjectParams[] = [
         stackProject: [StackIcons["HTML"], StackIcons["CSS"], StackIcons["JS"]],
         linkCode: 'https://github.com/murashko12/WatchShop',
         linkDemo: 'https://watch-shop-pi.vercel.app/',
-        description: "E-commerce watch store with product catalog and shopping cart functionality"
+        description: t('portfolio.projects.watchShop')
     },
     {
         id: 5,
@@ -70,7 +70,7 @@ export const ProjectsItems: IProjectParams[] = [
         stackProject: [StackIcons["React"], StackIcons["TS"], StackIcons["Tailwindcss"]],
         linkCode: 'https://github.com/murashko12/kanban-board-ts',
         linkDemo: 'https://kanban-board-ts-virid.vercel.app/',
-        description: "Drag & drop task management board with local storage persistence"
+        description: t('portfolio.projects.kanbanBoard')
     },
     {
         id: 6,
@@ -79,6 +79,6 @@ export const ProjectsItems: IProjectParams[] = [
         stackProject: [StackIcons["React"], StackIcons["TS"], StackIcons["Tailwindcss"], StackIcons["Redux"]],
         linkCode: 'https://github.com/murashko12/ecommerce-cart',
         linkDemo: 'https://ecommerce-cart-olive.vercel.app/',
-        description: "Modern e-commerce platform with cart management and product filtering"
+        description: t('portfolio.projects.ecommerceApp')
     }
 ]
