@@ -10,13 +10,13 @@
         "name": "Petr Murashko",
         "title": "Frontend",
         "developer": "Developer",
-        "description": "React & TypeScript Specialist with <strong>4+ years</strong> of experience. Passionate about building <strong>high-performance</strong> web applications with modern technologies and clean architecture.",
+        "description": "React & TypeScript Specialist with <strong>3+ years</strong> of experience. Passionate about building <strong>high-performance</strong> web applications with modern technologies and clean architecture.",
         "downloadCV": "Download CV",
         "photoAlt": "Petr Murashko - Frontend Developer"
     },
     "about": {
         "title": "Career Journey",
-        "description": "Frontend Developer with <strong>4+ years</strong> of commercial experience, specializing in modern <strong>React & TypeScript</strong>. From internship to Middle Developer, I've delivered high-performance applications with measurable results in performance optimization and user experience.",
+        "description": "Frontend Developer with <strong>3+ years</strong> of commercial experience, specializing in modern <strong>React & TypeScript</strong>. From internship to Middle Developer, I've delivered high-performance applications with measurable results in performance optimization and user experience.",
         "timeline": [
             {
                 "date": "2021 September",
@@ -73,7 +73,7 @@
         "label": "Projects"
       },
       {
-        "number": "4+",
+        "number": "3+",
         "label": "Technologies"
       },
       {
