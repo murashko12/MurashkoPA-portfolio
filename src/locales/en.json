@@ -149,5 +149,29 @@
       },
       "note": "* Required fields. I typically respond within 24 hours."
     }
+  },
+  "testimonials": {
+    "title": "TESTIMONIALS",
+    "subtitle": "What my colleagues say about working with me",
+    "0": {
+      "name": "Vyacheslav Dyachenko",
+      "position": "Lead Frontend Developer",
+      "comment": "..."
+    },
+    "1": {
+      "name": "Nikita Shevlyakov",
+      "position": "Chief Commercial Officer",
+      "comment": "..."
+    },
+    "2": {
+      "name": "Alexander Mamaev",
+      "position": "Chief Technology Officer",
+      "comment": "..."
+    },
+    "3": {
+      "name": "Anna Kartoshkina",
+      "position": "Project Manager",
+      "comment": "..."
+    }
   }
 }

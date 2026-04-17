@@ -4,6 +4,7 @@ import Home from "./components/Home"
 import NavBar from "./components/NavBar"
 import Portfolio from "./components/Portfolio"
 import Skills from "./components/Skills"
+import Testimonials from "./components/Testimonials"
 import { useLanguage } from "./contexts/LanguageContext"
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
             <About key={language} />
             <Portfolio/>
             <Skills/>
-            <Contact/>
+            <Testimonials /> 
+            {/* <Contact/> */}
         </div>
     )
 }
