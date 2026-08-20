@@ -16,7 +16,7 @@ function App() {
             <About key={language} />
             <Portfolio/>
             <Skills/>
-            <Testimonials /> 
+            {/* <Testimonials />  */}
             {/* <Contact/> */}
         </div>
     )

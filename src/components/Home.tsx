@@ -27,7 +27,7 @@ const Home = () => {
         {
             id: 2,
             child: <FaTelegram size={24} />,
-            href: "https://t.me/Peter_Muraschko",
+            href: "https://t.me/Petr_Murashko",
             label: "Telegram"
         },
         {
